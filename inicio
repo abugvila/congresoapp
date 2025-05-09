@@ -1,0 +1,75 @@
+import { useState } from "react";
+import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
+
+export default function CongresoApp() {
+  const [tab, setTab] = useState("inicio");
+
+  return (
+    <div className="p-4 max-w-3xl mx-auto">
+      <h1 className="text-2xl font-bold mb-4">Congreso de Derecho Procesal</h1>
+      <Tabs value={tab} onValueChange={setTab} className="w-full">
+        <TabsList className="grid grid-cols-2 md:grid-cols-3 gap-2 mb-4">
+          <TabsTrigger value="inicio">Inicio</TabsTrigger>
+          <TabsTrigger value="cronograma">Cronograma</TabsTrigger>
+          <TabsTrigger value="ponencias">Ponencias</TabsTrigger>
+          <TabsTrigger value="ponentes">Ponentes</TabsTrigger>
+          <TabsTrigger value="turismo">Turismo</TabsTrigger>
+          <TabsTrigger value="credencial">Mi Credencial</TabsTrigger>
+        </TabsList>
+
+        <TabsContent value="inicio">
+          <Card><CardContent className="p-4">Bienvenido/a al Congreso. Usá el menú para navegar.</CardContent></Card>
+        </TabsContent>
+
+        <TabsContent value="cronograma">
+          <Card><CardContent className="p-4">
+            <ul>
+              <li><strong>Miércoles 10:00 - Aula Magna:</strong> Apertura</li>
+              <li><strong>Miércoles 11:00 - Aula 1:</strong> Ponencia: Reforma Procesal</li>
+              <li><strong>Jueves 09:00 - Aula 2:</strong> Debate sobre oralidad</li>
+            </ul>
+          </CardContent></Card>
+        </TabsContent>
+
+        <TabsContent value="ponencias">
+          <Card><CardContent className="p-4">
+            <ul>
+              <li><strong>La carga dinámica de la prueba</strong> - Dra. García (PDF)</li>
+              <li><strong>IA y procesos colectivos</strong> - Dr. Bugvila (PDF)</li>
+              <li><strong>El juez y la verdad</strong> - Dr. Mitidiero (PDF)</li>
+            </ul>
+          </CardContent></Card>
+        </TabsContent>
+
+        <TabsContent value="ponentes">
+          <Card><CardContent className="p-4">
+            <ul>
+              <li><strong>Dra. Mariana García:</strong> Profesora en UBA, autora en materia probatoria.</li>
+              <li><strong>Dr. Ignacio Bugvila:</strong> Especialista en IA y Derecho Procesal.</li>
+              <li><strong>Dr. Daniel Mitidiero:</strong> Profesor en Brasil, experto en teoría del proceso.</li>
+            </ul>
+          </CardContent></Card>
+        </TabsContent>
+
+        <TabsContent value="turismo">
+          <Card><CardContent className="p-4">
+            <ul>
+              <li><strong>Catedral de La Plata</strong> - Visita guiada y ascenso al mirador.</li>
+              <li><strong>Paseo del Bosque</strong> - Museo, lago y jardín zoológico.</li>
+              <li><strong>Circuito Gastronómico</strong> - Recomendaciones de bares y restaurantes.</li>
+            </ul>
+          </CardContent></Card>
+        </TabsContent>
+
+        <TabsContent value="credencial">
+          <Card><CardContent className="p-4">
+            <p>Escaneá tu QR al ingresar o ingresá tu DNI para validar tu asistencia.</p>
+            <Button className="mt-4">Validar</Button>
+          </CardContent></Card>
+        </TabsContent>
+      </Tabs>
+    </div>
+  );
+}
