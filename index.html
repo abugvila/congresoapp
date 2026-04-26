@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Plataforma digital del XXXIII Congreso Nacional de Derecho Procesal, La Plata, 5 al 7 de noviembre de 2026."
+    />
+    <title>XXXIII Congreso Nacional de Derecho Procesal</title>
+    <meta name="theme-color" content="#002350" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Libre+Baskerville:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="manifest" href="manifest.json" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="#home" aria-label="Inicio XXXIII CNDP">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span>
+          <strong>XXXIII CNDP</strong>
+          <small>La Plata 2026</small>
+        </span>
+      </a>
+      <nav class="desktop-nav" aria-label="Navegacion principal">
+        <a href="#agenda">Agenda</a>
+        <a href="#sedes">Sedes</a>
+        <a href="#ponentes">Ponentes</a>
+        <a href="#ponencias">Ponencias</a>
+        <a href="#networking">Networking</a>
+      </nav>
+      <a class="nav-cta" href="#perfil">Ingresar</a>
+    </header>
+
+    <main>
+      <section id="home" class="hero">
+        <div class="hero-content">
+          <div class="congress-emblem" aria-label="Logo estilizado del Congreso">
+            <span class="sun"></span>
+            <span class="laurel left"></span>
+            <span class="laurel right"></span>
+          </div>
+          <p class="eyebrow">5, 6 y 7 de noviembre de 2026 &middot; La Plata</p>
+          <h1>XXXIII Congreso Nacional de Derecho Procesal</h1>
+          <p class="hero-copy">
+            Una plataforma integral para acompanar la experiencia academica,
+            institucional y profesional del congreso antes, durante y despues
+            del encuentro.
+          </p>
+          <div class="hero-actions">
+            <a class="button primary" href="#agenda">Ver agenda</a>
+            <a class="button secondary" href="#ponencias">Repositorio</a>
+          </div>
+        </div>
+
+        <aside class="countdown-panel" aria-label="Cuenta regresiva">
+          <p>Inicio del Congreso</p>
+          <div class="countdown" id="countdown">
+            <span><strong>--</strong><small>dias</small></span>
+            <span><strong>--</strong><small>horas</small></span>
+            <span><strong>--</strong><small>min</small></span>
+          </div>
+          <div class="authority-note">
+            <h2>Carta de presentacion</h2>
+            <p>
+              Bienvenidos a un espacio federal de intercambio academico,
+              actualizacion profesional y construccion colectiva del derecho
+              procesal argentino.
+            </p>
+          </div>
+        </aside>
+      </section>
+
+      <section class="quick-grid" aria-label="Accesos rapidos">
+        <a href="#agenda">
+          <strong>Agenda personal</strong>
+          <span>Favoritos, filtros y recordatorios.</span>
+        </a>
+        <a href="#sedes">
+          <strong>Sedes y ciudad</strong>
+          <span>Mapa, alojamientos y transporte.</span>
+        </a>
+        <a href="#networking">
+          <strong>Networking</strong>
+          <span>Directorio opt-in de participantes.</span>
+        </a>
+      </section>
+
+      <section id="agenda" class="section">
+        <div class="section-heading">
+          <p class="eyebrow">Cronograma dinamico</p>
+          <h2>Agenda del Congreso</h2>
+        </div>
+        <div class="filters" role="group" aria-label="Filtros de agenda">
+          <button class="filter active" data-filter="all">Todo</button>
+          <button class="filter" data-filter="5">5 nov</button>
+          <button class="filter" data-filter="6">6 nov</button>
+          <button class="filter" data-filter="7">7 nov</button>
+          <button class="filter" data-filter="magistral">Magistrales</button>
+          <button class="filter" data-filter="comision">Comisiones</button>
+        </div>
+        <div class="agenda-list" id="agendaList"></div>
+      </section>
+
+      <section id="sedes" class="section split-section">
+        <div>
+          <p class="eyebrow">La Plata</p>
+          <h2>Sedes e informacion util</h2>
+          <p>
+            Mapa interactivo conceptual con puntos clave para facultades,
+            auditorios, transporte y recomendaciones urbanas para asistentes.
+          </p>
+          <div class="info-list">
+            <span>Facultad de Ciencias Juridicas y Sociales</span>
+            <span>Teatro Argentino</span>
+            <span>Hoteles recomendados</span>
+            <span>Corredores gastronomicos</span>
+          </div>
+        </div>
+        <div class="map-card" aria-label="Mapa esquematico de sedes">
+          <span class="map-pin pin-one">Facultad</span>
+          <span class="map-pin pin-two">Teatro</span>
+          <span class="map-pin pin-three">Hotel</span>
+        </div>
+      </section>
+
+      <section id="ponentes" class="section">
+        <div class="section-heading">
+          <p class="eyebrow">Expositores</p>
+          <h2>Panel de ponentes</h2>
+        </div>
+        <div class="speaker-grid" id="speakerGrid"></div>
+      </section>
+
+      <section id="ponencias" class="section repository">
+        <div class="section-heading">
+          <p class="eyebrow">Acceso restringido</p>
+          <h2>Repositorio de ponencias</h2>
+        </div>
+        <div class="repository-shell">
+          <div>
+            <h3>Validacion de inscripcion</h3>
+            <p>
+              Los documentos PDF estaran disponibles para participantes
+              autenticados con inscripcion confirmada.
+            </p>
+          </div>
+          <form class="login-card">
+            <label>
+              Correo profesional
+              <input type="email" placeholder="nombre@institucion.org" />
+            </label>
+            <label>
+              Codigo de inscripcion
+              <input type="password" placeholder="CNDP-2026" />
+            </label>
+            <button class="button primary" type="button">Validar acceso</button>
+          </form>
+        </div>
+      </section>
+
+      <section id="networking" class="section networking">
+        <div class="section-heading">
+          <p class="eyebrow">Comunidad academica</p>
+          <h2>Networking</h2>
+        </div>
+        <div class="search-bar">
+          <input id="networkSearch" type="search" placeholder="Buscar por nombre o especialidad" />
+        </div>
+        <div class="participant-list" id="participantList"></div>
+      </section>
+
+      <section id="perfil" class="section profile-section">
+        <div>
+          <p class="eyebrow">App movil</p>
+          <h2>Navegacion principal</h2>
+          <p>
+            La experiencia movil prioriza cuatro accesos de uso frecuente:
+            agenda, ponentes, networking y perfil personal.
+          </p>
+        </div>
+        <div class="phone-frame" aria-label="Vista conceptual de app movil">
+          <div class="phone-top"></div>
+          <div class="phone-content">
+            <h3>Mi agenda</h3>
+            <p>2 actividades favoritas hoy</p>
+            <div class="mini-card">Conferencia Magistral &middot; 10:00</div>
+            <div class="mini-card">Comision Derecho Procesal Civil &middot; 15:30</div>
+          </div>
+          <nav class="bottom-nav" aria-label="Navegacion de app">
+            <span>Agenda</span>
+            <span>Ponentes</span>
+            <span>Red</span>
+            <span>Perfil</span>
+          </nav>
+        </div>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
