@@ -1,10 +1,38 @@
-# XXXIII CNDP - Prototipo digital
+# XXXIII CNDP - Plataforma digital
 
-Primera version programada del ecosistema digital para el XXXIII Congreso Nacional de Derecho Procesal, La Plata 2026.
+Aplicacion Next.js del ecosistema digital para el XXXIII Congreso Nacional de Derecho Procesal, La Plata 2026.
 
-## Como abrir
+## Stack
 
-Abrir `index.html` en el navegador.
+- Next.js con App Router.
+- React para interacciones de agenda, favoritos y networking.
+- Export estatico para GitHub Pages.
+- GitHub Actions para build y deploy automatico.
+
+## Desarrollo local
+
+```bash
+npm install
+npm run dev
+```
+
+Abrir `http://localhost:3000`.
+
+## Build estatico
+
+```bash
+npm run build
+```
+
+El sitio exportado queda en `out/`.
+
+## Deploy
+
+Cada push a `main` ejecuta `.github/workflows/deploy-pages.yml` y publica el sitio en GitHub Pages.
+
+URL esperada cuando Pages este activo:
+
+`https://jcpetela.github.io/congresoapp/`
 
 ## Incluye
 
@@ -17,10 +45,3 @@ Abrir `index.html` en el navegador.
 - Networking con buscador de participantes.
 - Vista conceptual de app movil con navegacion inferior.
 - Manifest PWA inicial.
-
-## Siguiente etapa sugerida
-
-- Migrar a Next.js para SEO, rutas y datos server-side.
-- Conectar autenticacion y roles.
-- Modelar agenda, ponentes, ponencias y networking en backend.
-- Agregar mapas reales y notificaciones push.
