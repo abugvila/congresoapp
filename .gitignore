@@ -3,3 +3,7 @@ node_modules
 out
 .DS_Store
 .env*.local
+.expo
+expo-env.d.ts
+mobile/.expo
+mobile/node_modules
