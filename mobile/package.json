@@ -10,12 +10,12 @@
     "web": "expo start --web"
   },
   "dependencies": {
-    "expo": "latest",
-    "react": "latest",
-    "react-native": "latest",
-    "react-native-safe-area-context": "latest"
+    "expo": "~54.0.0",
+    "react": "19.1.0",
+    "react-native": "0.81.x"
   },
   "devDependencies": {
-    "@babel/core": "latest"
+    "@babel/core": "latest",
+    "babel-preset-expo": "latest"
   }
 }
