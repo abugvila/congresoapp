@@ -1,14 +1,13 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { agenda, filters } from "../data";
 
 export default function AgendaExplorer() {
   const [activeFilter, setActiveFilter] = useState("all");
-  const [favoriteIds, setFavoriteIds] = useState(() => []);
+  const [favoriteIds, setFavoriteIds] = useState([]);
 
-  useState(() => {
-    if (typeof window === "undefined") return;
+  useEffect(() => {
     const stored = window.localStorage.getItem("cndpFavorites");
     if (stored) setFavoriteIds(JSON.parse(stored));
   }, []);
