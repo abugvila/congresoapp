@@ -87,6 +87,10 @@
   .nav-dropdown-panel {
     right: -72px;
   }
+
+  .quick-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 @media (max-width: 560px) {
