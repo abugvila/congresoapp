@@ -32,7 +32,7 @@ Cada push a `main` ejecuta `.github/workflows/deploy-pages.yml` y publica el sit
 
 URL esperada cuando Pages este activo:
 
-`https://jcpetela.github.io/congresoapp/`
+`https://abugvila.github.io/congresoapp/`
 
 ## Incluye
 
