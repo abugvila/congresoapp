@@ -1,0 +1,21 @@
+{
+  "expo": {
+    "name": "XXXIII CNDP",
+    "slug": "cndp-mobile",
+    "description": "Maqueta movil del XXXIII Congreso Nacional de Derecho Procesal.",
+    "version": "0.1.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "light",
+    "scheme": "cndp",
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.abugvila.cndp"
+    },
+    "android": {
+      "package": "com.abugvila.cndp"
+    },
+    "web": {
+      "bundler": "metro"
+    }
+  }
+}
