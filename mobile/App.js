@@ -146,9 +146,9 @@ function AgendaScreen() {
       {visibleAgenda.map((item) => (
         <View key={item.id} style={styles.card}>
           <View style={styles.cardHeader}>
-            <Text style={styles.time}>{item.time} · {item.day} nov</Text>
+            <Text style={styles.time}>{item.time} - {item.day} nov</Text>
             <TouchableOpacity style={styles.starButton} onPress={() => toggleFavorite(item.id)}>
-              <Text style={[styles.starText, favoriteIds.includes(item.id) && styles.starTextActive]}>★</Text>
+              <Text style={[styles.starText, favoriteIds.includes(item.id) && styles.starTextActive]}>*</Text>
             </TouchableOpacity>
           </View>
           <Text style={styles.cardTitle}>{item.title}</Text>
@@ -252,7 +252,7 @@ export default function App() {
           {tabs.map((tab) => (
             <TouchableOpacity key={tab} style={styles.navItem} onPress={() => setActiveTab(tab)}>
               <Text style={[styles.navIcon, activeTab === tab && styles.navIconActive]}>
-                {tab === "Agenda" ? "▦" : tab === "Ponentes" ? "◉" : tab === "Networking" ? "◇" : "◎"}
+                {tab === "Agenda" ? "A" : tab === "Ponentes" ? "P" : tab === "Networking" ? "N" : "U"}
               </Text>
               <Text style={[styles.navLabel, activeTab === tab && styles.navLabelActive]}>{tab}</Text>
             </TouchableOpacity>
@@ -372,6 +372,7 @@ const styles = StyleSheet.create({
   starText: {
     color: colors.steel,
     fontSize: 18,
+    fontWeight: "800",
   },
   starTextActive: {
     color: colors.navy,
