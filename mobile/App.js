@@ -1,8 +1,8 @@
-import { StatusBar } from "expo-status-bar";
 import { useMemo, useState } from "react";
 import {
   SafeAreaView,
   ScrollView,
+  StatusBar,
   StyleSheet,
   Text,
   TextInput,
@@ -245,7 +245,7 @@ export default function App() {
 
   return (
     <SafeAreaView style={styles.safeArea}>
-      <StatusBar style="dark" />
+      <StatusBar barStyle="dark-content" />
       <View style={styles.appShell}>
         {screen}
         <View style={styles.bottomNav}>
