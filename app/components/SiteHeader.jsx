@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import CongressLogo from "./CongressLogo";
 
 const navItems = [
   ["/agenda", "Agenda"],
@@ -15,7 +16,7 @@ export default function SiteHeader() {
   return (
     <header className="site-header">
       <Link className="brand" href="/" aria-label="Inicio XXXIII CNDP">
-        <span className="brand-mark" aria-hidden="true" />
+        <CongressLogo compact />
         <span>
           <strong>XXXIII CNDP</strong>
           <small>La Plata 2026</small>
