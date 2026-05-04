@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 660" role="img" aria-labelledby="title desc">
+  <title id="title">XXXIII Congreso Nacional de Derecho Procesal</title>
+  <desc id="desc">Logo institucional azul del congreso, La Plata 2026.</desc>
+  <rect width="720" height="660" fill="#ffffff"/>
+  <g transform="translate(360 190)">
+    <path d="M-155 -18 A158 158 0 0 1 155 -18" fill="none" stroke="#1b2c66" stroke-width="10" stroke-linecap="round"/>
+    <g stroke="#1b2c66" stroke-width="10" stroke-linecap="square">
+      <path d="M0 -110 V-32"/>
+      <path d="M-94 -78 L-28 -24"/>
+      <path d="M94 -78 L28 -24"/>
+      <path d="M-124 -25 H-40"/>
+      <path d="M124 -25 H40"/>
+      <path d="M-60 -103 L-18 -30"/>
+      <path d="M60 -103 L18 -30"/>
+    </g>
+    <g stroke="#8fb0cb" stroke-width="9" stroke-linecap="square">
+      <path d="M0 124 V36"/>
+      <path d="M-82 84 L-28 28"/>
+      <path d="M82 84 L28 28"/>
+      <path d="M-36 114 L-12 36"/>
+      <path d="M36 114 L12 36"/>
+    </g>
+    <circle r="34" fill="#ffffff"/>
+    <g fill="none" stroke="#8fb0cb" stroke-width="10" stroke-linecap="round">
+      <path d="M-135 40 C-125 110 -70 160 -10 172"/>
+      <path d="M135 40 C125 110 70 160 10 172"/>
+    </g>
+    <g fill="#8fb0cb">
+      <ellipse cx="-134" cy="60" rx="8" ry="22" transform="rotate(-35 -134 60)"/>
+      <ellipse cx="-116" cy="92" rx="8" ry="22" transform="rotate(-45 -116 92)"/>
+      <ellipse cx="-90" cy="122" rx="8" ry="22" transform="rotate(-55 -90 122)"/>
+      <ellipse cx="-55" cy="148" rx="8" ry="22" transform="rotate(-68 -55 148)"/>
+      <ellipse cx="134" cy="60" rx="8" ry="22" transform="rotate(35 134 60)"/>
+      <ellipse cx="116" cy="92" rx="8" ry="22" transform="rotate(45 116 92)"/>
+      <ellipse cx="90" cy="122" rx="8" ry="22" transform="rotate(55 90 122)"/>
+      <ellipse cx="55" cy="148" rx="8" ry="22" transform="rotate(68 55 148)"/>
+      <path d="M-18 166 H18 V192 H-18z"/>
+    </g>
+  </g>
+  <g fill="#1b2c66" text-anchor="middle" font-family="Inter, Montserrat, Arial, sans-serif">
+    <text x="360" y="415" font-size="42" font-weight="800">XXXIII Congreso Nacional</text>
+    <text x="360" y="465" font-size="42" font-weight="800">de Derecho Procesal</text>
+    <path d="M235 490 H485" stroke="#1b2c66" stroke-width="2"/>
+    <text x="360" y="530" font-size="26" letter-spacing="2">5-6-7 NOVIEMBRE 2026</text>
+    <path d="M235 548 H485" stroke="#1b2c66" stroke-width="2"/>
+    <text x="360" y="600" font-size="28" letter-spacing="8">LA PLATA</text>
+  </g>
+</svg>
