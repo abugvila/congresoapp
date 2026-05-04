@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import CongressLogo from "./components/CongressLogo";
 import SiteHeader from "./components/SiteHeader";
 import { congressStart } from "./data";
 
@@ -29,11 +30,7 @@ export default function Home() {
       <main>
         <section id="home" className="hero">
           <div className="hero-content">
-            <div className="congress-emblem" aria-label="Logo estilizado del Congreso">
-              <span className="sun" />
-              <span className="laurel left" />
-              <span className="laurel right" />
-            </div>
+            <CongressLogo />
             <p className="eyebrow">5, 6 y 7 de noviembre de 2026 &middot; La Plata</p>
             <h1>XXXIII Congreso Nacional de Derecho Procesal</h1>
             <p className="hero-copy">
