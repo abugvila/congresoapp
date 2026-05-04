@@ -1,5 +1,6 @@
 import "./globals.css";
 import "./navigation.css";
+import "./venues.css";
 
 const isGithubActions = process.env.GITHUB_ACTIONS === "true";
 const basePath = isGithubActions ? "/congresoapp" : "";
