@@ -102,6 +102,80 @@ const usefulBlocks = [
   },
 ];
 
+const gastronomyAreas = [
+  {
+    title: "Centro civico y eje 51/53",
+    text:
+      "La zona entre Plaza Moreno, el Palacio Municipal, la Catedral, calle 12 y Plaza San Martin concentra cafes, confiterias, bares y restaurantes utiles para almuerzos breves entre actividades.",
+  },
+  {
+    title: "Diagonal 74 y Plaza Italia",
+    text:
+      "Corredor muy activo para cenas, cervecerias, picadas y salidas informales. Conviene reservar para grupos y prever mayor movimiento por la noche.",
+  },
+  {
+    title: "Paseo del Bosque y zona universitaria",
+    text:
+      "Buena alternativa para pausas diurnas, cafes y almuerzos livianos cerca del Museo, facultades y espacios verdes.",
+  },
+  {
+    title: "City Bell y Gonnet",
+    text:
+      "Opcion para quienes se alojen fuera del centro o quieran una salida mas distendida. Requiere traslado y una agenda con mas margen.",
+  },
+];
+
+const gastronomyPicks = [
+  {
+    name: "Cerveceria Modelo",
+    category: "Historico / bar",
+    note: "Clasico platense para comida abundante, picadas y encuentros informales en el centro.",
+    query: "Cerveceria Modelo La Plata",
+  },
+  {
+    name: "Don Quijote",
+    category: "Restaurante tradicional",
+    note: "Opcion clasica para pastas, carnes y cena institucional con reserva previa.",
+    query: "Restaurante Don Quijote La Plata",
+  },
+  {
+    name: "Club Atenas",
+    category: "Parrilla",
+    note: "Referencia local para carnes y reuniones de grupo; recomendable confirmar disponibilidad.",
+    query: "Restaurant Club Atenas La Plata",
+  },
+  {
+    name: "Ostaria Valtellinese",
+    category: "Italiana",
+    note: "Cocina italiana y mediterranea, util para cenas mas tranquilas o grupos reducidos.",
+    query: "Ostaria Valtellinese La Plata",
+  },
+  {
+    name: "Akari Sushi Bar",
+    category: "Sushi / asiatica",
+    note: "Alternativa para quienes prefieran cocina japonesa y opciones fuera del circuito tradicional.",
+    query: "Akari Sushi Bar La Plata",
+  },
+  {
+    name: "Charola Cocina & Bazar",
+    category: "Cafe / almuerzo",
+    note: "Buena opcion para cafe, brunch o comida liviana durante la jornada.",
+    query: "Charola Cocina y Bazar La Plata",
+  },
+  {
+    name: "Cinco Sabios Brewing Co.",
+    category: "Cerveceria",
+    note: "Propuesta cervecera para cierre de dia y networking informal.",
+    query: "Cinco Sabios Brewing Co La Plata",
+  },
+  {
+    name: "Baxar Mercado",
+    category: "Mercado gastronomico",
+    note: "Formato practico cuando el grupo tiene preferencias variadas y necesita resolver rapido.",
+    query: "Baxar Mercado La Plata",
+  },
+];
+
 export default function VenuesMap() {
   const [selectedId, setSelectedId] = useState("jursoc");
   const selected = useMemo(
@@ -160,6 +234,68 @@ export default function VenuesMap() {
           </article>
         ))}
       </div>
+
+      <section className="gastronomy-section" aria-labelledby="gastronomy-title">
+        <div className="section-heading stacked">
+          <p className="eyebrow">Guia de la ciudad</p>
+          <h2 id="gastronomy-title">Gastronomia platense</h2>
+          <p>
+            La Plata combina cafes historicos, bodegones, parrillas, cocina italiana,
+            cervecerias y propuestas contemporaneas. Para los dias del Congreso se
+            recomienda reservar cenas, confirmar horarios y prever traslados cuando
+            la opcion elegida quede fuera del casco urbano.
+          </p>
+        </div>
+
+        <div className="gastronomy-areas">
+          {gastronomyAreas.map((area) => (
+            <article className="gastronomy-area" key={area.title}>
+              <h3>{area.title}</h3>
+              <p>{area.text}</p>
+            </article>
+          ))}
+        </div>
+
+        <div className="gastronomy-picks">
+          {gastronomyPicks.map((place) => (
+            <article className="food-card" key={place.name}>
+              <span>{place.category}</span>
+              <h3>{place.name}</h3>
+              <p>{place.note}</p>
+              <a
+                href={`https://www.openstreetmap.org/search?query=${encodeURIComponent(place.query)}`}
+                target="_blank"
+                rel="noreferrer"
+              >
+                Ver ubicacion
+              </a>
+            </article>
+          ))}
+        </div>
+
+        <div className="gastronomy-advice">
+          <h3>Para asistentes</h3>
+          <ul>
+            <li>Almuerzos entre paneles: priorizar opciones sobre calles 12, 51, 53 y diagonal 74.</li>
+            <li>Cenas de comisiones o institutos: reservar con antelacion e informar cantidad de asistentes.</li>
+            <li>Pausas cortas: tener a mano cafes cercanos a Plaza Moreno, Pasaje Dardo Rocha y zona universitaria.</li>
+            <li>Grupos con dietas especiales: consultar opciones vegetarianas, sin TACC y medios de pago antes de confirmar.</li>
+          </ul>
+        </div>
+
+        <div className="source-links" aria-label="Fuentes consultadas">
+          <span>Fuentes orientativas:</span>
+          <a href="https://turismo.laplata.gob.ar/sabores-platenses.html" target="_blank" rel="noreferrer">
+            Turismo La Plata
+          </a>
+          <a href="https://www.tripadvisor.es/Restaurants-g312747-La_Plata_Province_of_Buenos_Aires_Central_Argentina.html" target="_blank" rel="noreferrer">
+            Tripadvisor
+          </a>
+          <a href="https://buenosairesconnect.com/donde-comer-la-plata-argentina-restaurantes-gastronomia/" target="_blank" rel="noreferrer">
+            Buenos Aires Connect
+          </a>
+        </div>
+      </section>
     </div>
   );
 }
