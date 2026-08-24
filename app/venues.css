@@ -140,6 +140,113 @@
   gap: 18px;
 }
 
+.gastronomy-section {
+  grid-column: 1 / -1;
+  display: grid;
+  gap: 20px;
+  padding-top: 10px;
+}
+
+.gastronomy-areas,
+.gastronomy-picks {
+  display: grid;
+  gap: 16px;
+}
+
+.gastronomy-areas {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.gastronomy-picks {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.gastronomy-area,
+.food-card,
+.gastronomy-advice,
+.source-links {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--white);
+  box-shadow: 0 12px 34px rgba(0, 35, 80, 0.06);
+}
+
+.gastronomy-area {
+  padding: 18px;
+}
+
+.gastronomy-area h3,
+.food-card h3,
+.gastronomy-advice h3 {
+  margin-bottom: 10px;
+}
+
+.gastronomy-area p,
+.food-card p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.food-card {
+  display: flex;
+  min-height: 230px;
+  flex-direction: column;
+  gap: 10px;
+  padding: 18px;
+}
+
+.food-card span {
+  color: var(--steel);
+  font-size: 12px;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.food-card h3 {
+  color: var(--navy);
+}
+
+.food-card a {
+  width: max-content;
+  margin-top: auto;
+  color: var(--navy);
+  font-weight: 800;
+}
+
+.gastronomy-advice {
+  padding: 22px;
+}
+
+.gastronomy-advice ul {
+  display: grid;
+  gap: 10px;
+  margin: 0;
+  padding-left: 18px;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.source-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 14px;
+  align-items: center;
+  padding: 14px 16px;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.source-links span {
+  color: var(--navy);
+  font-weight: 800;
+}
+
+.source-links a {
+  color: var(--steel);
+  font-weight: 800;
+}
+
 .info-card {
   padding: 20px;
   box-shadow: 0 12px 34px rgba(0, 35, 80, 0.06);
@@ -160,8 +267,17 @@
 
 @media (max-width: 980px) {
   .venues-layout,
-  .useful-grid {
+  .useful-grid,
+  .gastronomy-areas,
+  .gastronomy-picks {
     grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 1180px) and (min-width: 981px) {
+  .gastronomy-areas,
+  .gastronomy-picks {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
@@ -172,5 +288,9 @@
 
   .interactive-map iframe {
     min-height: 330px;
+  }
+
+  .food-card {
+    min-height: 0;
   }
 }
