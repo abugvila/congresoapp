@@ -31,6 +31,9 @@ const readSet=key=>{try{return new Set(JSON.parse(localStorage.getItem(key)||'[]
 const saveSet=(key,set)=>{try{localStorage.setItem(key,JSON.stringify([...set]))}catch{/* Private mode */}};
 const favKey='cndp_pwa_favorites_v1'; const committeeKey='cndp_pwa_committees_v1';
 const st={route:'inicio',day:5,agendaTab:'programa',agendaMode:'todos',track:'Todas',agendaQuery:'',commissionQuery:'',speakerQuery:'',ponenciasQuery:'',ponenciasArea:'Todas',ponenciasTipo:'generales',venuesTab:'Mapa y sedes',venueSelected:'teatro',favorites:readSet(favKey),favCommissions:readSet(committeeKey),expanded:new Set(),installPrompt:null};
+// Conserva las actividades favoritas cuando una conferencia cambia de jornada.
+const oldFriday=st.favorites.has('v06-precedentes'),oldSaturday=st.favorites.has('s07-colaboracion');
+if(oldFriday||oldSaturday){st.favorites.delete('v06-precedentes');st.favorites.delete('s07-colaboracion');if(oldFriday)st.favorites.add('s07-precedentes');if(oldSaturday)st.favorites.add('v06-colaboracion');saveSet(favKey,st.favorites);}
 const dayLong={5:'Jueves 5 de noviembre de 2026',6:'Viernes 6 de noviembre de 2026',7:'Sábado 7 de noviembre de 2026'};
 const classes={Civil:'civil',Penal:'penal',Workshop:'workshop'};
 let leafletPromise=null, map=null, mapMarkers={}; let toastTimer=null;
@@ -55,12 +58,12 @@ function render(){nav();if(st.route==='agenda')main.innerHTML=renderAgenda();els
 function installBanner(){return `<aside class="install-banner"><h3>${svg('house')} Agregá el Congreso a tu celular</h3><p>Sin instalar aplicaciones de una tienda: en iPhone, abrí esta página con Safari y elegí <strong>Compartir → Añadir a pantalla de inicio</strong>. En Android, utilizá <strong>Instalar aplicación</strong> desde el menú del navegador.</p><div class="button-row"><button class="button secondary small" data-action="install">${svg('arrow',16)} Instalar o ver instrucciones</button></div></aside>`}
 function renderInicio(){
  const until=Math.max(0,Math.ceil((new Date('2026-11-05T08:00:00-03:00')-new Date())/86400000));
- return `<section class="hero" aria-label="Presentación del Congreso"><div class="watermark">XXXIII</div><span class="pill">LA PLATA 2026</span><div class="hero-title">Congreso Nacional de Derecho Procesal</div><span class="gold-line"></span><div class="hero-meta"><span>${svg('calendar')} 5, 6 y 7 de noviembre de 2026</span><span>${svg('pin')} La Plata, Buenos Aires</span></div><div class="countdown"><div><strong>${until}</strong><small>${until>0?'días para el Congreso':'Congreso · 2026'}</small></div><button class="cta-arrow" type="button" data-route="agenda" aria-label="Ver agenda">→</button></div></section>
+ return `<section class="logo-identity" aria-label="Logo del Congreso"><img src="./logo-congreso.png" alt="XXXIII Congreso Nacional de Derecho Procesal" width="1180" height="841" decoding="async"></section><section class="hero" aria-label="Presentación del Congreso"><div class="watermark">XXXIII</div><span class="pill">LA PLATA 2026</span><div class="hero-title">Congreso Nacional de Derecho Procesal</div><span class="gold-line"></span><div class="hero-meta"><span>${svg('calendar')} 5, 6 y 7 de noviembre de 2026</span><span>${svg('pin')} La Plata, Buenos Aires</span></div><div class="countdown"><div><strong>${until}</strong><small>${until>0?'días para el Congreso':'Congreso · 2026'}</small></div><button class="cta-arrow" type="button" data-route="agenda" aria-label="Ver agenda">→</button></div></section>
  <section class="quick-grid" aria-label="Accesos directos">
  ${[['agenda','calendar','Programa','Actividades'],['sedes','map','La Plata','Sedes y ciudad'],['ponentes','users','Ponentes','Expositores'],['ponencias','book','Ponencias','Trabajos académicos']].map(([r,ic,l,sm])=>`<button class="quick-card" type="button" data-route="${r}"><span class="ico-box">${svg(ic)}</span><strong>${l}</strong><span>${sm}</span><b class="arrow-small">→</b></button>`).join('')}
  </section><div class="app-notice">${svg('check')} <div><strong>Todo el programa en tu celular.</strong><p>31 actividades ordenadas por jornada, agenda personal, comisiones, mapas y enlaces institucionales.</p></div></div>
  ${officialLink('Sitio oficial del Congreso',D.officialRoot)} ${installBanner()}
- <p class="footer-small">La agenda de esta versión se elaboró a partir de las capturas del programa compartidas el 21/10/2026. Ante modificaciones de último momento, prevalece el <a href="${D.officialProgramUrl}" target="_blank" rel="noopener noreferrer">cronograma oficial</a>.</p>`;
+ <p class="footer-small">Agenda contrastada con el cronograma oficial publicado por el Instituto de Derecho Procesal de la UNLP, consultado el 27/10/2026. Ante modificaciones de último momento, prevalece el <a href="${D.officialProgramUrl}" target="_blank" rel="noopener noreferrer">cronograma oficial</a>.</p>`;
 }
 function renderAgenda(){
  const mode=st.agendaTab==='programa';
@@ -69,7 +72,7 @@ function renderAgenda(){
 function renderPrograma(){
  const counts={5:14,6:10,7:7};
  return `<div class="banner"><div class="eyebrow">Cronograma · La Plata 2026</div><h1>Agenda de actividades</h1><p>5, 6 y 7 de noviembre · Horarios, salones y expositores.</p></div>
- <div class="app-notice">${svg('check')} <div><strong>31 actividades del programa</strong><p>Con sesiones simultáneas de Derecho Procesal Civil y Penal. Los horarios se conservan para consulta sin conexión.</p></div></div>
+ <div class="app-notice">${svg('check')} <div><strong>31 actividades del cronograma oficial actualizado</strong><p>Incluye el intercambio de conferencias del viernes y sábado, sus exposiciones, moderadores y sedes. Los horarios se conservan para consulta sin conexión.</p></div></div><div class="button-row official-schedule">${officialLink('Consultar cronograma oficial en PDF',D.officialProgramPdf)}</div>
  <div class="tabs"><button class="seg ${st.agendaMode==='todos'?'active':''}" data-action="mode" data-val="todos">Programa</button><button class="seg ${st.agendaMode==='favoritos'?'active':''}" data-action="mode" data-val="favoritos">Mi agenda (${st.favorites.size})</button></div>
  <div class="days">${[5,6,7].map(d=>`<button class="day-card ${st.day===d?'active':''}" data-action="day" data-val="${d}"><strong>${({5:'JUE 5',6:'VIE 6',7:'SÁB 7'})[d]}</strong><small>${counts[d]} actividades</small></button>`).join('')}</div>
  <label for="agendaSearch" class="sr-only">Buscar conferencia, tema o persona</label><input id="agendaSearch" class="search" type="search" placeholder="Buscar conferencia, tema o persona" value="${esc(st.agendaQuery)}" autocomplete="off">

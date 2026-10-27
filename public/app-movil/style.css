@@ -45,3 +45,11 @@
 .paper-unavailable{opacity:.62;background:#f6f8f9;cursor:default}
 .paper-unavailable small{font-style:italic}
 @media(max-width:420px){.paper-count{font-size:10px;max-width:100px}.paper-tab{padding:13px 9px}.paper-tab strong{font-size:13px}}
+
+/* Identidad institucional oficial (imagen recibida, sin fechas antiguas) */
+.logo-identity{background:#fff;border:1px solid var(--line);border-radius:24px;margin-bottom:18px;padding:12px 20px;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.logo-identity img{width:100%;height:auto;max-width:500px;max-height:285px;object-fit:contain;display:block}
+.brand-icon{background:white;border:1px solid var(--line);border-radius:12px;overflow:hidden}
+.brand-icon img{width:100%;height:100%;object-fit:contain;display:block}
+.official-schedule{margin:0 0 18px}
+@media(max-width:440px){.logo-identity{padding:9px 8px;border-radius:18px}.logo-identity img{max-height:225px}}

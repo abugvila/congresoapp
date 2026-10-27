@@ -7,7 +7,7 @@ window.CNDP_DATA = {
       "end": "09:00",
       "title": "Acreditaciones",
       "track": "General",
-      "venue": "Teatro Argentino | Espacio Pettoruti",
+      "venue": "Teatro Argentino | Espacio Petorutti",
       "speakers": [],
       "moderators": [],
       "details": ""
@@ -54,7 +54,7 @@ window.CNDP_DATA = {
         "Burkhard Hess"
       ],
       "moderators": [],
-      "details": "Palabras introductorias: Eduardo Oteiza."
+      "details": "Burkhard Hess: «Transparencia, cooperación y proporcionalidad: ¿nuevos principios procesales del siglo XXI?». Palabras introductorias: Eduardo Oteiza."
     },
     {
       "id": "j05-civil1",
@@ -87,7 +87,7 @@ window.CNDP_DATA = {
       "end": "15:00",
       "title": "Cóctel",
       "track": "General",
-      "venue": "Teatro Argentino | Espacio Pettoruti",
+      "venue": "Teatro Argentino | Espacio Petorutti",
       "speakers": [],
       "moderators": [],
       "details": ""
@@ -181,8 +181,11 @@ window.CNDP_DATA = {
         "Artur Carpes",
         "Vitor de Paula Ramos"
       ],
-      "moderators": [],
-      "details": ""
+      "moderators": [
+        "Cristina González de la Vega",
+        "Ignacio Falke"
+      ],
+      "details": "Artur Carpes: «Eficiencia probatoria y admisibilidad de la prueba». Vitor de Paula Ramos: «Consecuencias del razonamiento probatorio según los medios de prueba»."
     },
     {
       "id": "v06-civil4",
@@ -221,22 +224,22 @@ window.CNDP_DATA = {
       "details": ""
     },
     {
-      "id": "v06-precedentes",
+      "id": "v06-colaboracion",
       "day": 6,
       "start": "12:00",
       "end": "13:30",
-      "title": "Conferencia internacional: Cortes supremas y precedentes",
+      "title": "Conferencia internacional: Colaboración y acceso a la justicia",
       "track": "General",
-      "venue": "Teatro Argentino | Sala Astor Piazzolla",
+      "venue": "Teatro Argentino | Sala Astor Piazzola",
       "speakers": [
-        "Daniel Mitidiero",
-        "Luca Passanante"
+        "Antonio do Passo Cabral",
+        "Santiago Pereira Campos"
       ],
       "moderators": [
-        "Agustín Hankovits",
-        "María Lilia Gómez Alonso de Díaz Cordero"
+        "Roberto Pagés",
+        "María Marta Nieto"
       ],
-      "details": ""
+      "details": "Antonio do Passo Cabral: «Técnicas de implementación del principio de colaboración procesal». Santiago Pereira Campos: «Acceso a la justicia, proporcionalidad y lenguaje claro»."
     },
     {
       "id": "v06-almuerzo",
@@ -281,7 +284,7 @@ window.CNDP_DATA = {
       "end": "18:15",
       "title": "Pausa de café / Acreditación Asamblea AADP",
       "track": "General",
-      "venue": "Teatro Argentino | Espacio Pettoruti",
+      "venue": "Teatro Argentino | Espacio Petorutti",
       "speakers": [],
       "moderators": [],
       "details": ""
@@ -371,22 +374,22 @@ window.CNDP_DATA = {
       "details": ""
     },
     {
-      "id": "s07-colaboracion",
+      "id": "s07-precedentes",
       "day": 7,
       "start": "11:00",
       "end": "12:00",
-      "title": "Conferencia internacional: Colaboración y acceso a la justicia",
+      "title": "Conferencia internacional: Cortes supremas y precedentes",
       "track": "General",
       "venue": "Municipalidad de La Plata | Salón Dorado",
       "speakers": [
-        "Antonio do Passo Cabral",
-        "Santiago Pereira Campos"
+        "Daniel Mitidiero",
+        "Luca Passanante"
       ],
       "moderators": [
-        "Roberto Pagés",
-        "María Marta Nieto"
+        "Agustín Hankovits",
+        "María Lilia Gómez Alonso de Díaz Cordero"
       ],
-      "details": ""
+      "details": "Daniel Mitidiero: «El nuevo régimen de relevancia de la cuestión federal (Brasil) y el rol constitucional de las cortes superiores». Luca Passanante: «Precedentes y Cortes Supremas en Europa»."
     },
     {
       "id": "s07-clausura",
@@ -964,5 +967,7 @@ window.CNDP_DATA = {
       "lon": -58.0126
     }
   ],
-  "generatedFrom": "Proyecto Expo v1.5.2, programa transcrito a 21/10/2026"
+  "generatedFrom": "Proyecto Expo v1.5.2, programa transcrito a 21/10/2026",
+  "officialProgramPdf": "https://drive.google.com/file/d/1F7r9YM82U45lMqUzFHtL9_CXQ2eWJRQZ/view?usp=sharing",
+  "programSourceUpdated": "2026-10-27"
 };

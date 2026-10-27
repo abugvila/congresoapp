@@ -1,5 +1,5 @@
-const CACHE='cndp-2026-web-v3-particulares';
-const LOCAL=['./','./index.html','./style.css','./data.js','./ponencias.js','./ponencias-particulares.js','./app.js','./manifest.webmanifest','./icon-192.png','./icon-512.png'];
+const CACHE='cndp-2026-web-v4-cronograma-logo';
+const LOCAL=['./','./index.html','./style.css','./data.js','./ponencias.js','./ponencias-particulares.js','./app.js','./manifest.webmanifest','./icon-192.png','./icon-512.png','./logo-congreso.png'];
 self.addEventListener('install',event=>{
  event.waitUntil(caches.open(CACHE).then(c=>c.addAll(LOCAL)).then(()=>self.skipWaiting()));
 });
