@@ -28,3 +28,20 @@
 .paper-link strong{display:block;font-size:14px;line-height:1.4}.paper-link small{display:block;color:var(--sub);font-size:12px;margin-top:6px}
 .paper-symbol{display:flex;color:var(--blue);flex:none}.paper-link>.icon{color:var(--blue);flex:none}
 .repo-note{font-size:12px;color:var(--sub);margin:12px 0}.repo-particular{margin-top:24px}
+
+/* Selector y listado de ponencias particulares */
+.paper-tabs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin:24px 0 16px}
+.paper-tab{background:white;border:1px solid var(--line);border-radius:16px;padding:15px 11px;text-align:left;display:flex;flex-direction:column;gap:5px;color:var(--ink)}
+.paper-tab.active{background:var(--navy);color:white;border-color:var(--navy)}
+.paper-tab strong{font-size:14px;line-height:1.25}.paper-tab span{font-size:12px;opacity:.75}
+.paper-accordion{margin:15px 0;background:white;border:1px solid var(--line);border-radius:18px;overflow:hidden}
+.paper-accordion summary{list-style:none;cursor:pointer;padding:16px;display:flex;align-items:center;justify-content:space-between;gap:14px}
+.paper-accordion summary::-webkit-details-marker{display:none}
+.paper-accordion summary strong{display:block;font-size:clamp(16px,4vw,20px);line-height:1.3}
+.paper-accordion summary .eyebrow{display:block;margin:0 0 5px}
+.paper-count{display:flex;gap:7px;align-items:center;flex:none;font-size:11px;color:var(--sub)}
+.paper-accordion[open] .paper-count svg{transform:rotate(180deg)}
+.paper-accordion .papers-list{border:0;border-top:1px solid var(--line);border-radius:0}
+.paper-unavailable{opacity:.62;background:#f6f8f9;cursor:default}
+.paper-unavailable small{font-style:italic}
+@media(max-width:420px){.paper-count{font-size:10px;max-width:100px}.paper-tab{padding:13px 9px}.paper-tab strong{font-size:13px}}

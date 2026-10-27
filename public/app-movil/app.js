@@ -4,6 +4,7 @@
 'use strict';
 const D=window.CNDP_DATA;
 const P=window.CNDP_PONENCIAS||{papers:[],groups:[],photos:{},repositoryUrl:''};
+const PP=window.CNDP_PARTICULARES||[];
 if(!D){document.getElementById('main').textContent='No se pudieron cargar los datos de la agenda.';return;}
 const I={
  house:'<path d="m3 10 9-7 9 7v10a1 1 0 0 1-1 1h-5v-7H9v7H4a1 1 0 0 1-1-1z"/>',
@@ -29,7 +30,7 @@ const norm=s=>String(s||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLo
 const readSet=key=>{try{return new Set(JSON.parse(localStorage.getItem(key)||'[]'))}catch{return new Set()}};
 const saveSet=(key,set)=>{try{localStorage.setItem(key,JSON.stringify([...set]))}catch{/* Private mode */}};
 const favKey='cndp_pwa_favorites_v1'; const committeeKey='cndp_pwa_committees_v1';
-const st={route:'inicio',day:5,agendaTab:'programa',agendaMode:'todos',track:'Todas',agendaQuery:'',commissionQuery:'',speakerQuery:'',ponenciasQuery:'',ponenciasArea:'Todas',venuesTab:'Mapa y sedes',venueSelected:'teatro',favorites:readSet(favKey),favCommissions:readSet(committeeKey),expanded:new Set(),installPrompt:null};
+const st={route:'inicio',day:5,agendaTab:'programa',agendaMode:'todos',track:'Todas',agendaQuery:'',commissionQuery:'',speakerQuery:'',ponenciasQuery:'',ponenciasArea:'Todas',ponenciasTipo:'generales',venuesTab:'Mapa y sedes',venueSelected:'teatro',favorites:readSet(favKey),favCommissions:readSet(committeeKey),expanded:new Set(),installPrompt:null};
 const dayLong={5:'Jueves 5 de noviembre de 2026',6:'Viernes 6 de noviembre de 2026',7:'Sábado 7 de noviembre de 2026'};
 const classes={Civil:'civil',Penal:'penal',Workshop:'workshop'};
 let leafletPromise=null, map=null, mapMarkers={}; let toastTimer=null;
@@ -107,17 +108,41 @@ function renderSpeakerResults(arr){
   ${photo?`<a class="photo-credit" href="${esc(photo.source)}" target="_blank" rel="noopener noreferrer">Foto: ${esc(photo.credit)}</a>`:''}</article>`;
  }).join('')||'<div class="empty">Sin resultados para esta búsqueda.</div>';
 }
+function filteredPonencias(){
+ const general=st.ponenciasTipo==='generales';
+ const all=general?P.papers:PP;
+ return all.filter(p=>{
+  const group=P.groups.find(g=>g.id===p.groupId);
+  const author=general?(D.speakers.find(s=>s.id===p.speakerId)?.name||''):p.authors;
+  return (st.ponenciasArea==='Todas'||group?.area===st.ponenciasArea)&&norm(p.title+' '+author+' '+(group?.title||'')).includes(norm(st.ponenciasQuery));
+ });
+}
 function renderPonencias(){
- const all=P.papers||[];
- const filtered=all.filter(p=>(st.ponenciasArea==='Todas'||P.groups.find(g=>g.id===p.groupId)?.area===st.ponenciasArea)&&norm(p.title+' '+(D.speakers.find(s=>s.id===p.speakerId)?.name||'')+' '+(P.groups.find(g=>g.id===p.groupId)?.title||'')).includes(norm(st.ponenciasQuery)));
- return `<div class="section-heading"><div class="eyebrow">Biblioteca académica · La Plata 2026</div><h1>Repositorio de ponencias</h1><p class="lead">Accedé a las ponencias generales publicadas por el Instituto de Derecho Procesal de la UNLP y al repositorio completo de trabajos generales y particulares.</p></div>
- <div class="count-strip"><div><strong>${all.length}</strong><small>GENERALES CON ENLACE</small></div><div><strong>08</strong><small>SUBCOMISIONES</small></div></div>
- <div class="button-row repo-actions">${officialLink('Repositorio oficial completo',P.repositoryUrl)} <button type="button" class="button secondary small" data-route="ponentes">${svg('users',16)} Ver ponentes</button></div>
+ const countGenerales=P.papers.length;
+ const countParticulares=PP.filter(p=>p.url).length;
+ return `<div class="section-heading"><div class="eyebrow">Biblioteca académica · La Plata 2026</div><h1>Repositorio de ponencias</h1><p class="lead">Consultá las ponencias generales y particulares del XXXIII Congreso Nacional de Derecho Procesal. Todos los enlaces remiten a los documentos del repositorio oficial de la UNLP.</p></div>
+ <div class="count-strip"><div><strong>${countGenerales}</strong><small>GENERALES</small></div><div><strong>${countParticulares}</strong><small>PARTICULARES</small></div><div><strong>08</strong><small>SUBCOMISIONES</small></div></div>
+ <div class="button-row repo-actions">${officialLink('Repositorio oficial',P.repositoryUrl)} <button type="button" class="button secondary small" data-route="ponentes">${svg('users',16)} Ver ponentes</button></div>
+ <div class="paper-tabs" role="group" aria-label="Tipo de ponencias">
+ ${[['generales','Ponencias generales',countGenerales],['particulares','Ponencias particulares',countParticulares]].map(([id,label,n])=>`<button type="button" class="paper-tab ${st.ponenciasTipo===id?'active':''}" data-action="ponencias-tipo" data-val="${id}" aria-pressed="${st.ponenciasTipo===id}"><strong>${label}</strong><span>${n} documentos</span></button>`).join('')}
+ </div>
  <input type="search" id="ponenciasSearch" class="search" placeholder="Buscar por autor, título o tema" value="${esc(st.ponenciasQuery)}" aria-label="Buscar ponencia">
  <div class="chips" role="group" aria-label="Filtrar por área">${['Todas','Civil','Penal'].map(x=>`<button class="chip ${st.ponenciasArea===x?'active':''}" data-action="ponencias-area" data-val="${x}" type="button">${x==='Todas'?'Todas las áreas':'Procesal '+x}</button>`).join('')}</div>
- <div id="ponenciasResults">${renderPonenciasResults(filtered)}</div>
- <div class="app-notice repo-particular">${svg('book')}<div><strong>¿Buscás una ponencia particular?</strong><p>El repositorio institucional incluye también los trabajos particulares de cada subcomisión. ${officialLink('Consultar todas las ponencias',P.repositoryUrl)}</p></div></div>
- <p class="footer-small">Enlaces directos tomados del repositorio oficial, consultado el 27/10/2026. Los documentos pueden modificarse en origen y requieren conexión a internet.</p>`;
+ <div class="section-title"><small>${filteredPonencias().length} trabajos encontrados · ${st.ponenciasTipo==='generales'?'Generales':'Particulares'}</small></div>
+ <div id="ponenciasResults">${st.ponenciasTipo==='generales'?renderPonenciasResults(filteredPonencias()):renderParticularesResults(filteredPonencias())}</div>
+ ${st.ponenciasTipo==='particulares'?`<p class="repo-note">El repositorio oficial también menciona una ponencia de Mauricio M. Monetta («Eficacia probatoria y verdad jurídica objetiva») sin archivo disponible. Se muestra identificada en su subcomisión, pero sin enlace.</p>`:''}
+ <p class="footer-small">Fuente: Instituto de Derecho Procesal de la UNLP. Enlaces verificados contra el índice institucional el 27/10/2026. Los documentos requieren conexión a internet y su disponibilidad depende de Google Drive.</p>`;
+}
+function renderParticularesResults(papers){
+ if(!papers.length)return '<div class="empty">No se encontraron ponencias particulares para esta búsqueda.</div>';
+ return P.groups.map((g,i)=>{
+  const list=papers.filter(p=>p.groupId===g.id);
+  if(!list.length)return '';
+  return `<details class="papers-group paper-accordion" ${i===0||st.ponenciasQuery?'open':''}>
+  <summary><span><span class="eyebrow">Derecho Procesal ${esc(g.area)}</span><strong>${esc(g.title)}</strong></span><span class="paper-count">${list.length} ${list.length===1?'trabajo':'trabajos'} ${svg('chevron',18)}</span></summary>
+  <div class="papers-list">${list.map(p=>p.url?`<a class="paper-link" href="${esc(p.url)}" target="_blank" rel="noopener noreferrer"><span class="paper-symbol">${svg('book',20)}</span><span><strong>${esc(p.title)}</strong><small>${esc(p.authors)}</small></span>${svg('external',18)}</a>`:`<div class="paper-link paper-unavailable"><span class="paper-symbol">${svg('book',20)}</span><span><strong>${esc(p.title)}</strong><small>${esc(p.authors)} · Sin archivo publicado</small></span></div>`).join('')}</div>
+  </details>`;
+ }).join('');
 }
 function renderPonenciasResults(papers){
  if(!papers.length)return '<div class="empty">No se encontraron ponencias para esta búsqueda.</div>';
@@ -148,6 +173,7 @@ function markEvent(id){if(st.favorites.has(id)){st.favorites.delete(id);toast('A
 const parseTime=x=>{const [a,b]=(x||'00:00').split(':').map(Number);return a*60+b};
 function handleClick(e){const link=e.target.closest('[data-route]');if(link){e.preventDefault();go(link.dataset.route);return;}const btn=e.target.closest('[data-action]');if(!btn)return;const action=btn.dataset.action;const val=btn.dataset.val;
  switch(action){
+ case 'ponencias-tipo':st.ponenciasTipo=val;st.ponenciasQuery='';render();break;
  case 'ponencias-area':st.ponenciasArea=val;render();break;
  case 'agenda-tab':st.agendaTab=val;render();break;
  case 'mode':st.agendaMode=val;render();break;
@@ -161,7 +187,7 @@ function handleClick(e){const link=e.target.closest('[data-route]');if(link){e.p
  case 'focus-venue':st.venueSelected=val;document.querySelectorAll('.venue-card').forEach(el=>el.classList.toggle('selected',el.id==='venue-'+val));if(map&&mapMarkers[val]){map.flyTo(mapMarkers[val].getLatLng(),17);mapMarkers[val].openPopup();document.getElementById('map')?.scrollIntoView({behavior:'smooth',block:'center'});}else {toast('Seleccioná la sede. Para indicaciones, utilizá Cómo llegar.')}break;
  case 'install':if(st.installPrompt){st.installPrompt.prompt();st.installPrompt.userChoice.then(()=>{st.installPrompt=null}).catch(()=>{})}else toast('iPhone: Safari → Compartir → Añadir a pantalla de inicio. Android: menú → Instalar aplicación.');break;
  }}
-function handleInput(e){if(e.target.id==='agendaSearch'){st.agendaQuery=e.target.value;const out=document.getElementById('agendaResults');if(out)out.innerHTML=renderAgendaResults();}else if(e.target.id==='commissionSearch'){st.commissionQuery=e.target.value;const out=document.getElementById('committeeResults');if(out)out.innerHTML=renderCommitteeResults(D.committees.filter(c=>norm(c.title+' '+c.number+' '+c.field+' '+c.topics.join(' ')).includes(norm(st.commissionQuery))))}else if(e.target.id==='ponenciasSearch'){st.ponenciasQuery=e.target.value;const filtered=P.papers.filter(p=>(st.ponenciasArea==='Todas'||P.groups.find(g=>g.id===p.groupId)?.area===st.ponenciasArea)&&norm(p.title+' '+(D.speakers.find(s=>s.id===p.speakerId)?.name||'')+' '+(P.groups.find(g=>g.id===p.groupId)?.title||'')).includes(norm(st.ponenciasQuery)));const out=document.getElementById('ponenciasResults');if(out)out.innerHTML=renderPonenciasResults(filtered);}else if(e.target.id==='speakerSearch'){st.speakerQuery=e.target.value;const a=D.speakers.filter(s=>norm(s.name+' '+s.role+' '+s.topics.join(' ')+(P.papers.find(p=>p.speakerId===s.id)?.title||'')).includes(norm(st.speakerQuery)));const out=document.getElementById('speakerResults');if(out)out.innerHTML=renderSpeakerResults(a)}}
+function handleInput(e){if(e.target.id==='agendaSearch'){st.agendaQuery=e.target.value;const out=document.getElementById('agendaResults');if(out)out.innerHTML=renderAgendaResults();}else if(e.target.id==='commissionSearch'){st.commissionQuery=e.target.value;const out=document.getElementById('committeeResults');if(out)out.innerHTML=renderCommitteeResults(D.committees.filter(c=>norm(c.title+' '+c.number+' '+c.field+' '+c.topics.join(' ')).includes(norm(st.commissionQuery))))}else if(e.target.id==='ponenciasSearch'){st.ponenciasQuery=e.target.value;const out=document.getElementById('ponenciasResults');if(out)out.innerHTML=st.ponenciasTipo==='generales'?renderPonenciasResults(filteredPonencias()):renderParticularesResults(filteredPonencias());const counter=document.querySelector('.section-title small');if(counter)counter.textContent=filteredPonencias().length+' trabajos encontrados · '+(st.ponenciasTipo==='generales'?'Generales':'Particulares');}else if(e.target.id==='speakerSearch'){st.speakerQuery=e.target.value;const a=D.speakers.filter(s=>norm(s.name+' '+s.role+' '+s.topics.join(' ')+(P.papers.find(p=>p.speakerId===s.id)?.title||'')).includes(norm(st.speakerQuery)));const out=document.getElementById('speakerResults');if(out)out.innerHTML=renderSpeakerResults(a)}}
 document.addEventListener('error',e=>{if(e.target.matches?.('.speaker-photo img')){e.target.hidden=true;const fallback=e.target.nextElementSibling;if(fallback)fallback.hidden=false;}},true);
 document.addEventListener('click',handleClick);document.addEventListener('input',handleInput);
 window.addEventListener('beforeinstallprompt',event=>{event.preventDefault();st.installPrompt=event;});
