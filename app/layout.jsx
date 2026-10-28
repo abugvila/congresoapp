@@ -2,9 +2,6 @@ import "./globals.css";
 import "./navigation.css";
 import "./venues.css";
 
-const isGithubActions = process.env.GITHUB_ACTIONS === "true";
-const basePath = isGithubActions ? "/congresoapp" : "";
-
 export const metadata = {
   title: "XXXIII Congreso Nacional de Derecho Procesal",
   description:
@@ -22,7 +19,7 @@ export default function RootLayout({ children }) {
           href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Libre+Baskerville:wght@700&display=swap"
           rel="stylesheet"
         />
-        <link rel="manifest" href={`${basePath}/manifest.json`} />
+        <link rel="manifest" href="/manifest.json" />
       </head>
       <body>{children}</body>
     </html>

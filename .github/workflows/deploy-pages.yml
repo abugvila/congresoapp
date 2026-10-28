@@ -35,6 +35,9 @@ jobs:
       - name: Build static site
         run: npm run build
 
+      - name: Open the mobile app at the custom domain root
+        run: cp index.html out/index.html
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
