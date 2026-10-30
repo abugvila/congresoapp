@@ -7,7 +7,7 @@ window.CNDP_DATA = {
       "end": "09:00",
       "title": "Acreditaciones",
       "track": "General",
-      "venue": "Teatro Argentino | Espacio Petorutti",
+      "venue": "Teatro Argentino | Espacio Pettoruti",
       "speakers": [],
       "moderators": [],
       "details": ""
@@ -17,7 +17,7 @@ window.CNDP_DATA = {
       "day": 5,
       "start": "09:00",
       "end": "10:00",
-      "title": "Acto de apertura",
+      "title": "Apertura",
       "track": "General",
       "venue": "Teatro Argentino | Sala Ginastera",
       "speakers": [],
@@ -34,12 +34,10 @@ window.CNDP_DATA = {
       "venue": "Teatro Argentino | Sala Ginastera",
       "speakers": [
         "Roberto Berizonce",
-        "Patricia Bermejo",
-        "Eduardo Oteiza"
+        "Eduardo Oteiza",
+        "Patricia Bermejo"
       ],
-      "moderators": [
-        "Amos Grajales"
-      ],
+      "moderators": [],
       "details": ""
     },
     {
@@ -66,7 +64,7 @@ window.CNDP_DATA = {
       "venue": "Municipalidad de La Plata | Salón Dorado",
       "speakers": [],
       "moderators": [],
-      "details": "El Derecho Procesal en tiempos de la IA."
+      "details": ""
     },
     {
       "id": "j05-penal1",
@@ -78,7 +76,7 @@ window.CNDP_DATA = {
       "venue": "Hotel AMAU | Salón de conferencias",
       "speakers": [],
       "moderators": [],
-      "details": "Juzgamiento de los casos penales en las democracias constitucionales."
+      "details": ""
     },
     {
       "id": "j05-cocktail",
@@ -87,7 +85,7 @@ window.CNDP_DATA = {
       "end": "15:00",
       "title": "Cóctel",
       "track": "General",
-      "venue": "Teatro Argentino | Espacio Petorutti",
+      "venue": "Teatro Argentino | Espacio Pettoruti",
       "speakers": [],
       "moderators": [],
       "details": ""
@@ -97,7 +95,7 @@ window.CNDP_DATA = {
       "day": 5,
       "start": "14:30",
       "end": "15:00",
-      "title": "Asamblea Comisión de Jóvenes Procesalistas",
+      "title": "Asamblea de la Comisión de Jóvenes Procesalistas",
       "track": "Simultánea",
       "venue": "Hotel AMAU | Salón de conferencias",
       "speakers": [],
@@ -109,9 +107,9 @@ window.CNDP_DATA = {
       "day": 5,
       "start": "15:00",
       "end": "16:30",
-      "title": "Concurso de Semilleros · Ronda 1",
+      "title": "Primera ronda del II Concurso Nacional de Estudiantes de Pregrado – Semilleros de Derecho Procesal de la AADP",
       "track": "Semilleros",
-      "venue": "Colegio de la Abogacía de La Plata",
+      "venue": "Colegio de la Abogacía de La Plata | Aula Galetti",
       "speakers": [],
       "moderators": [],
       "details": ""
@@ -126,7 +124,7 @@ window.CNDP_DATA = {
       "venue": "Municipalidad de La Plata | Salón Dorado",
       "speakers": [],
       "moderators": [],
-      "details": "Arbitraje."
+      "details": ""
     },
     {
       "id": "j05-penal2",
@@ -138,7 +136,7 @@ window.CNDP_DATA = {
       "venue": "Hotel AMAU | Salón de conferencias",
       "speakers": [],
       "moderators": [],
-      "details": "El descubrimiento de la prueba en el sistema adversarial."
+      "details": ""
     },
     {
       "id": "j05-cafe",
@@ -157,13 +155,12 @@ window.CNDP_DATA = {
       "day": 5,
       "start": "18:00",
       "end": "18:15",
-      "title": "Presentación del libro de homenaje a Roberto Berizonce",
+      "title": "Presentación de libro. Homenaje al Prof. Berizonce (IIDP-AADP)",
       "track": "General",
       "venue": "Municipalidad de La Plata | Salón Dorado",
       "speakers": [
         "Santiago Pereira Campos",
         "Giovanni Priori Posada",
-        "Fluvio Santarelli",
         "Patricia Bermejo"
       ],
       "moderators": [],
@@ -178,14 +175,14 @@ window.CNDP_DATA = {
       "track": "General",
       "venue": "Municipalidad de La Plata | Salón Dorado",
       "speakers": [
-        "Artur Carpes",
-        "Vitor de Paula Ramos"
+        "Vitor de Paula Ramos",
+        "Artur Carpes"
       ],
       "moderators": [
         "Cristina González de la Vega",
         "Ignacio Falke"
       ],
-      "details": "Artur Carpes: «Eficiencia probatoria y admisibilidad de la prueba». Vitor de Paula Ramos: «Consecuencias del razonamiento probatorio según los medios de prueba»."
+      "details": "Vitor de Paula Ramos: «Consecuencias del razonamiento probatorio según los medios de prueba». Artur Carpes: «Eficiencia probatoria y admisibilidad de la prueba»."
     },
     {
       "id": "v06-civil4",
@@ -197,7 +194,7 @@ window.CNDP_DATA = {
       "venue": "Teatro Argentino | Sala Astor Piazzolla",
       "speakers": [],
       "moderators": [],
-      "details": "Tutelas especiales y diferenciadas."
+      "details": ""
     },
     {
       "id": "v06-penal4",
@@ -209,16 +206,16 @@ window.CNDP_DATA = {
       "venue": "Hotel AMAU | Salón de conferencias",
       "speakers": [],
       "moderators": [],
-      "details": "Instrucciones al jurado."
+      "details": ""
     },
     {
       "id": "v06-sem2",
       "day": 6,
       "start": "09:30",
       "end": "10:30",
-      "title": "Concurso de Semilleros · Ronda 2",
+      "title": "Segunda ronda del II Concurso Nacional de Estudiantes de Pregrado – Semilleros de Derecho Procesal de la AADP",
       "track": "Semilleros",
-      "venue": "Colegio de la Abogacía de La Plata",
+      "venue": "Colegio de la Abogacía de La Plata | Aula de la Igualdad",
       "speakers": [],
       "moderators": [],
       "details": ""
@@ -232,14 +229,14 @@ window.CNDP_DATA = {
       "track": "General",
       "venue": "Teatro Argentino | Sala Astor Piazzola",
       "speakers": [
-        "Antonio do Passo Cabral",
-        "Santiago Pereira Campos"
+        "Santiago Pereira Campos",
+        "Antonio do Passo Cabral"
       ],
       "moderators": [
         "Roberto Pagés",
         "María Marta Nieto"
       ],
-      "details": "Antonio do Passo Cabral: «Técnicas de implementación del principio de colaboración procesal». Santiago Pereira Campos: «Acceso a la justicia, proporcionalidad y lenguaje claro»."
+      "details": "Santiago Pereira Campos: «Acceso a la justicia, proporcionalidad y lenguaje claro». Antonio do Passo Cabral: «Técnicas de implementación del principio de colaboración procesal»."
     },
     {
       "id": "v06-almuerzo",
@@ -263,7 +260,7 @@ window.CNDP_DATA = {
       "venue": "Teatro Argentino | Sala Astor Piazzolla",
       "speakers": [],
       "moderators": [],
-      "details": "Procesos colectivos y estructurales."
+      "details": ""
     },
     {
       "id": "v06-penal3",
@@ -275,16 +272,16 @@ window.CNDP_DATA = {
       "venue": "Hotel AMAU | Salón de conferencias",
       "speakers": [],
       "moderators": [],
-      "details": "El control de la acusación."
+      "details": ""
     },
     {
       "id": "v06-cafe",
       "day": 6,
       "start": "17:30",
-      "end": "18:15",
+      "end": "18:00",
       "title": "Pausa de café / Acreditación Asamblea AADP",
       "track": "General",
-      "venue": "Teatro Argentino | Espacio Petorutti",
+      "venue": "Teatro Argentino | Espacio Pettoruti",
       "speakers": [],
       "moderators": [],
       "details": ""
@@ -306,9 +303,9 @@ window.CNDP_DATA = {
       "day": 6,
       "start": "21:00",
       "end": "00:30",
-      "title": "Cóctel de cierre",
+      "title": "Cocktail de cierre",
       "track": "General",
-      "venue": "Lugar a confirmar",
+      "venue": "Serena | Hotel Dazzler | Piso 12",
       "speakers": [],
       "moderators": [],
       "details": "Finaliza a las 00:30 del sábado 7 de noviembre."
@@ -318,57 +315,91 @@ window.CNDP_DATA = {
       "day": 7,
       "start": "09:00",
       "end": "11:00",
-      "title": "Workshop 1 (internacional)",
+      "title": "Workshop 1 (internacional): El hilo, la trama y el desenlace: la carga de la prueba en el siglo XXI",
       "track": "Workshop",
-      "venue": "Colegio de Abogados de La Plata | Aula Galetti",
-      "speakers": [],
-      "moderators": [],
-      "details": "El hilo, la trama y el desenlace: Derecho y razonamiento probatorio en el Siglo XXI."
+      "venue": "Colegio de la Abogacía de La Plata | Salón de Actos",
+      "speakers": [
+        "Ana Rodríguez",
+        "Gabriel Valentín",
+        "Victoria Pasqualotto"
+      ],
+      "moderators": [
+        "Lara Morquecho"
+      ],
+      "details": "Ana Rodríguez: «¿Quién teme a la carga de la prueba? El onus probandi en el siglo XXI». Gabriel Valentín: «Regular la prueba: por qué y para qué». Victoria Pasqualotto: «Razonamiento probatorio como elemento de aproximación entre Civil Law y Common Law: el caso de Brasil»."
     },
     {
       "id": "s07-taller2",
       "day": 7,
       "start": "09:00",
       "end": "11:00",
-      "title": "Workshop 2 (Universidad de Buenos Aires)",
+      "title": "Workshop 2 (Universidad de Buenos Aires): Acción preventiva: aspectos procesales",
       "track": "Workshop",
-      "venue": "Colegio de Abogados de La Plata | Aula de la Igualdad",
-      "speakers": [],
-      "moderators": [],
-      "details": "Acción preventiva: recaudos procesales."
+      "venue": "Colegio de la Abogacía de La Plata | Aula de la Memoria (Aula 1)",
+      "speakers": [
+        "Lorena Maggio",
+        "Paula Castro",
+        "Martin Zselzer"
+      ],
+      "moderators": [
+        "Sophia Romero Rodríguez"
+      ],
+      "details": "Lorena Maggio: «La prevención en derecho de familia como recurso de protección». Paula Castro: «La acción preventiva y el derecho de consumo». Martin Zselzer: «Pretensión preventiva en materia civil patrimonial»."
     },
     {
       "id": "s07-taller3",
       "day": 7,
       "start": "09:00",
       "end": "11:00",
-      "title": "Workshop 3 (Universidad Notarial Argentina)",
+      "title": "Workshop 3 (Universidad Notarial Argentina): Oralidad y control de calidad de las sentencias",
       "track": "Workshop",
-      "venue": "Colegio de Abogados de La Plata | Aula de la Memoria",
-      "speakers": [],
+      "venue": "Colegio de la Abogacía de La Plata | Aula Galetti",
+      "speakers": [
+        "Maite Bentancourt",
+        "Daniel Alegre",
+        "Evelyn Angeletti",
+        "Aixa Montagna",
+        "Agostina Collura",
+        "Luciano Scapini",
+        "Octavio Simone",
+        "Muriel Dorregaray",
+        "Josefina Anganuzzi",
+        "Franco Cavassa",
+        "Conrado Lopez Costa",
+        "Julia Belloqui Sarries",
+        "Valentina Staffora",
+        "Agustina Klala",
+        "Julieta Córica"
+      ],
       "moderators": [],
-      "details": "Oralidad y control de calidad de las sentencias."
+      "details": "Equipo de investigación de la Universidad Notarial Argentina."
     },
     {
       "id": "s07-taller4",
       "day": 7,
       "start": "09:00",
       "end": "11:00",
-      "title": "Workshop 4 (Comisión de Jóvenes Procesalistas)",
+      "title": "Workshop 4 (Comisión de Jóvenes Procesalistas): Taller sobre el control de la acusación",
       "track": "Workshop",
-      "venue": "Colegio de Abogados de La Plata | Aula Bustos",
-      "speakers": [],
+      "venue": "Instituto de Estudios Judiciales (SCBA)",
+      "speakers": [
+        "Lucas Ríos",
+        "Catalina Pascual",
+        "Martín Guerra (Uruguay)",
+        "Mariana C. Gallego",
+        "Rodrigo Almeida (Uruguay)"
+      ],
       "moderators": [],
-      "details": "Litigación en la audiencia de control de la acusación."
+      "details": ""
     },
     {
       "id": "s07-sem-final",
       "day": 7,
       "start": "09:00",
       "end": "11:00",
-      "title": "Concurso de Semilleros · Final",
+      "title": "Final del II Concurso Nacional de Estudiantes de Pregrado – Semilleros de Derecho Procesal de la AADP",
       "track": "Semilleros",
-      "venue": "Instituto de Estudios Judiciales",
+      "venue": "Colegio de la Abogacía de La Plata | Aula de la Igualdad",
       "speakers": [],
       "moderators": [],
       "details": ""
@@ -389,7 +420,7 @@ window.CNDP_DATA = {
         "Agustín Hankovits",
         "María Lilia Gómez Alonso de Díaz Cordero"
       ],
-      "details": "Daniel Mitidiero: «El nuevo régimen de relevancia de la cuestión federal (Brasil) y el rol constitucional de las cortes superiores». Luca Passanante: «Precedentes y Cortes Supremas en Europa»."
+      "details": "Daniel Mitidiero: «El nuevo régimen de relevancia de la cuestión federal y el rol constitucional de los tribunales superiores en Brasil». Luca Passanante: «Precedentes y Corte Suprema en Europa»."
     },
     {
       "id": "s07-clausura",
@@ -575,11 +606,11 @@ window.CNDP_DATA = {
       "latitude": -34.9181,
       "longitude": -57.9511,
       "approximate": false,
-      "detail": "Accreditaciones, apertura, conferencias, comisiones y Asamblea AADP.",
+      "detail": "Acreditaciones, apertura, conferencias, comisiones y Asamblea AADP.",
       "roomHints": {
         "Sala Ginastera": "Sala principal del Teatro; consultá señalética o personal del Congreso.",
-        "Sala Astor Piazzolla": "Primer subsuelo, según información del Teatro Argentino.",
-        "Espacio Pettoruti": "Primer subsuelo (foyer / espacio Emilio Pettoruti)."
+        "Sala Astor Piazzolla": "Consultar señalética o personal del Congreso.",
+        "Espacio Pettoruti": "Consultar señalética o personal del Congreso."
       }
     },
     {
@@ -619,12 +650,12 @@ window.CNDP_DATA = {
       "latitude": -34.91968,
       "longitude": -57.94991,
       "approximate": true,
-      "detail": "Rondas del Concurso de Semilleros y workshops del sábado.",
+      "detail": "Concurso de Semilleros y workshops del sábado.",
       "roomHints": {
+        "Salón de Actos": "Consultar distribución de salas en recepción del Colegio.",
         "Aula Galetti": "Consultar distribución de aulas en recepción del Colegio.",
         "Aula de la Igualdad": "Consultar distribución de aulas en recepción del Colegio.",
-        "Aula de la Memoria": "Consultar distribución de aulas en recepción del Colegio.",
-        "Aula Bustos": "Consultar distribución de aulas en recepción del Colegio."
+        "Aula de la Memoria (Aula 1)": "Consultar distribución de aulas en recepción del Colegio."
       }
     },
     {
@@ -636,7 +667,7 @@ window.CNDP_DATA = {
       "latitude": -34.91958,
       "longitude": -57.94935,
       "approximate": true,
-      "detail": "Sábado: final del Concurso de Semilleros. Confirmar con la organización cuál es el acceso habilitado.",
+      "detail": "Sábado: Workshop 4 (Comisión de Jóvenes Procesalistas).",
       "roomHints": {
         "Sede de capacitación": "Av. 13 esquina 48, primer piso (sede de capacitación, distinta de la sede administrativa de calle 45 N.º 894)."
       }
@@ -967,7 +998,7 @@ window.CNDP_DATA = {
       "lon": -58.0126
     }
   ],
-  "generatedFrom": "Proyecto Expo v1.5.2, programa transcrito a 21/10/2026",
-  "officialProgramPdf": "https://drive.google.com/file/d/1F7r9YM82U45lMqUzFHtL9_CXQ2eWJRQZ/view?usp=sharing",
-  "programSourceUpdated": "2026-10-27"
+  "generatedFrom": "Cronograma de Actividades del XXXIII Congreso Nacional de Derecho Procesal, PDF aportado el 30/10/2026",
+  "officialProgramPdf": "https://institutoderechoprocesal.jursoc.unlp.edu.ar/CNDP-La-Plata-2026/cronograma",
+  "programSourceUpdated": "2026-10-30"
 };
