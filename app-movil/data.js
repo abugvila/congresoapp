@@ -671,6 +671,20 @@ window.CNDP_DATA = {
       "roomHints": {
         "Sede de capacitación": "Av. 13 esquina 48, primer piso (sede de capacitación, distinta de la sede administrativa de calle 45 N.º 894)."
       }
+    },
+    {
+      "id": "serena",
+      "short": "Serena · Dazzler",
+      "name": "Serena · Hotel Dazzler La Plata",
+      "address": "Calle 54 N.º 924 (Plaza Moreno)",
+      "searchAddress": "Hotel Dazzler by Wyndham La Plata, Calle 54 924, La Plata, Argentina",
+      "latitude": -34.92125,
+      "longitude": -57.95465,
+      "approximate": true,
+      "detail": "Cóctel de cierre del viernes 6 de noviembre, de 21:00 a 00:30, en el restaurante Serena del piso 12.",
+      "roomHints": {
+        "Piso 12": "Restaurante Serena. El marcador señala el hotel; la sala está en el piso 12."
+      }
     }
   ],
   "committees": [
@@ -779,7 +793,8 @@ window.CNDP_DATA = {
         "IA",
         "Proceso civil"
       ],
-      "bio": "Ponente general en la subcomisión de Derecho Procesal en tiempos de la IA."
+      "bio": "Ponente general en la subcomisión de Derecho Procesal en tiempos de la IA.",
+      "photo": "./speakers/hermes-zanetti.jpg"
     },
     {
       "id": "pg2",
@@ -817,7 +832,8 @@ window.CNDP_DATA = {
         "Procesos colectivos",
         "Estructurales"
       ],
-      "bio": "Ponente general en la subcomisión de Procesos colectivos y estructurales."
+      "bio": "Ponente general en la subcomisión de Procesos colectivos y estructurales.",
+      "photo": "./speakers/francisco-verbic.jpg"
     },
     {
       "id": "pg6",
@@ -827,7 +843,8 @@ window.CNDP_DATA = {
         "Procesos colectivos",
         "Estructurales"
       ],
-      "bio": "Ponente general en la subcomisión de Procesos colectivos y estructurales."
+      "bio": "Ponente general en la subcomisión de Procesos colectivos y estructurales.",
+      "photo": "./speakers/jose-maria-salgado.jpg"
     },
     {
       "id": "pg7",
@@ -836,7 +853,8 @@ window.CNDP_DATA = {
       "topics": [
         "Tutelas especiales"
       ],
-      "bio": "Ponente general en la subcomisión de Tutelas especiales y diferenciadas."
+      "bio": "Ponente general en la subcomisión de Tutelas especiales y diferenciadas.",
+      "photo": "./speakers/giovanni-priori-posada.jpg"
     },
     {
       "id": "pg8",
@@ -845,7 +863,8 @@ window.CNDP_DATA = {
       "topics": [
         "Tutelas especiales"
       ],
-      "bio": "Ponente general en la subcomisión de Tutelas especiales y diferenciadas."
+      "bio": "Ponente general en la subcomisión de Tutelas especiales y diferenciadas.",
+      "photo": "./speakers/victoria-mosmann.jpg"
     },
     {
       "id": "pg9",
@@ -863,7 +882,8 @@ window.CNDP_DATA = {
       "topics": [
         "Proceso penal"
       ],
-      "bio": "Ponente general en la subcomisión de Juzgamiento de los casos penales."
+      "bio": "Ponente general en la subcomisión de Juzgamiento de los casos penales.",
+      "photo": "./speakers/belen-salido.jpg"
     },
     {
       "id": "pg11",
@@ -873,7 +893,8 @@ window.CNDP_DATA = {
         "Prueba",
         "Proceso penal"
       ],
-      "bio": "Ponente general en la subcomisión de Descubrimiento de la prueba."
+      "bio": "Ponente general en la subcomisión de Descubrimiento de la prueba.",
+      "photo": "./speakers/leonel-gonzalez-postigo.jpg"
     },
     {
       "id": "pg12",
@@ -883,7 +904,8 @@ window.CNDP_DATA = {
         "Prueba",
         "Proceso penal"
       ],
-      "bio": "Ponente general en la subcomisión de Descubrimiento de la prueba."
+      "bio": "Ponente general en la subcomisión de Descubrimiento de la prueba.",
+      "photo": "./speakers/marcela-cabrera.jpg"
     },
     {
       "id": "pg13",
@@ -893,7 +915,8 @@ window.CNDP_DATA = {
         "Proceso penal",
         "Acusación"
       ],
-      "bio": "Ponente general en la subcomisión de Control de la acusación. Verificar grafía definitiva en fuente oficial."
+      "bio": "Ponente general en la subcomisión de Control de la acusación. Verificar grafía definitiva en fuente oficial.",
+      "photo": "./speakers/juan-ignacio-perez-curci.jpg"
     },
     {
       "id": "pg14",
@@ -923,7 +946,108 @@ window.CNDP_DATA = {
         "Jurado",
         "Proceso penal"
       ],
-      "bio": "Ponente general en la subcomisión de Instrucciones al jurado."
+      "bio": "Ponente general en la subcomisión de Instrucciones al jurado.",
+      "photo": "./speakers/alejandro-cascio.jpg"
+    },
+    {
+      "id": "invitado-1",
+      "name": "Burkhard Hess",
+      "role": "Conferencia inaugural",
+      "topics": [
+        "Principios procesales"
+      ],
+      "bio": "Participante del XXXIII Congreso Nacional de Derecho Procesal.",
+      "photo": "./speakers/burkhard-hess.jpg"
+    },
+    {
+      "id": "invitado-2",
+      "name": "Antonio do Passo Cabral",
+      "role": "Conferencia internacional · Colaboración y acceso a la justicia",
+      "topics": [
+        "Colaboración procesal"
+      ],
+      "bio": "Participante del XXXIII Congreso Nacional de Derecho Procesal.",
+      "photo": "./speakers/antonio-do-passo-cabral.jpg"
+    },
+    {
+      "id": "invitado-3",
+      "name": "Santiago Pereira Campos",
+      "role": "Conferencia internacional · Colaboración y acceso a la justicia",
+      "topics": [
+        "Acceso a la justicia"
+      ],
+      "bio": "Participante del XXXIII Congreso Nacional de Derecho Procesal.",
+      "photo": "./speakers/santiago-pereira-campos.jpg"
+    },
+    {
+      "id": "invitado-4",
+      "name": "Vitor de Paula Ramos",
+      "role": "Conferencia internacional · Derecho y razonamiento probatorio",
+      "topics": [
+        "Prueba"
+      ],
+      "bio": "Participante del XXXIII Congreso Nacional de Derecho Procesal.",
+      "photo": "./speakers/vitor-de-paula-ramos.jpg"
+    },
+    {
+      "id": "invitado-5",
+      "name": "Artur Carpes",
+      "role": "Conferencia internacional · Derecho y razonamiento probatorio",
+      "topics": [
+        "Prueba"
+      ],
+      "bio": "Participante del XXXIII Congreso Nacional de Derecho Procesal.",
+      "photo": "./speakers/artur-carpes.jpg"
+    },
+    {
+      "id": "invitado-6",
+      "name": "Ana Rodríguez",
+      "role": "Workshop internacional · La carga de la prueba",
+      "topics": [
+        "Carga de la prueba"
+      ],
+      "bio": "Participante del XXXIII Congreso Nacional de Derecho Procesal.",
+      "photo": "./speakers/ana-rodriguez-alvarez.jpg"
+    },
+    {
+      "id": "invitado-7",
+      "name": "Gabriel Valentín",
+      "role": "Workshop internacional · La carga de la prueba",
+      "topics": [
+        "Prueba"
+      ],
+      "bio": "Participante del XXXIII Congreso Nacional de Derecho Procesal.",
+      "photo": "./speakers/gabriel-valentin.jpg"
+    },
+    {
+      "id": "invitado-8",
+      "name": "Victoria Pasqualotto",
+      "role": "Workshop internacional · La carga de la prueba",
+      "topics": [
+        "Prueba"
+      ],
+      "bio": "Participante del XXXIII Congreso Nacional de Derecho Procesal.",
+      "photo": "./speakers/victoria-pasqualotto.jpg"
+    },
+    {
+      "id": "invitado-9",
+      "name": "Daniel Mitidiero",
+      "role": "Conferencia internacional · Cortes supremas y precedentes",
+      "topics": [
+        "Precedentes"
+      ],
+      "bio": "Participante del XXXIII Congreso Nacional de Derecho Procesal.",
+      "photo": "./speakers/daniel-mitidiero.jpg"
+    },
+    {
+      "id": "invitado-10",
+      "name": "Luca Passanante",
+      "role": "Conferencia internacional · Cortes supremas y precedentes",
+      "topics": [
+        "Precedentes"
+      ],
+      "bio": "Participante del XXXIII Congreso Nacional de Derecho Procesal.",
+      "photo": "./speakers/luca-passanante.jpg"
     }
   ],
   "locations": [
@@ -998,7 +1122,7 @@ window.CNDP_DATA = {
       "lon": -58.0126
     }
   ],
-  "generatedFrom": "Cronograma de Actividades del XXXIII Congreso Nacional de Derecho Procesal, PDF aportado el 30/10/2026",
+  "generatedFrom": "Cronograma oficial del XXXIII Congreso actualizado al 30/10/2026; sección de ponentes ampliada con fotografías remitidas por la organización.",
   "officialProgramPdf": "https://institutoderechoprocesal.jursoc.unlp.edu.ar/CNDP-La-Plata-2026/cronograma",
-  "programSourceUpdated": "2026-10-30"
+  "programSourceUpdated": "2026-11-02"
 };
