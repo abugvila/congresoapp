@@ -35,6 +35,11 @@ jobs:
       - name: Build static site
         run: npm run build
 
+      - name: Prepare centered PWA icons
+        run: |
+          python3 -m pip install --quiet pillow
+          python3 scripts/center_pwa_icons.py
+
       - name: Open the mobile app at the custom domain root
         run: cp index.html out/index.html
 

@@ -1,5 +1,5 @@
 /* Congreso 2026: cache de respaldo, red prioritaria para evitar versiones obsoletas. */
-const CACHE='cndp-2026-web-v7-ponentes-2nov';
+const CACHE='cndp-2026-web-v8-centered-icons';
 const LOCAL=['./','./index.html','./style.css','./data.js','./ponencias.js','./ponencias-particulares.js','./app.js','./manifest.webmanifest','./icon-192.png','./icon-512.png','./logo-congreso.png'];
 self.addEventListener('install',event=>{
  event.waitUntil(caches.open(CACHE).then(async cache=>{
